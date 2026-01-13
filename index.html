@@ -289,16 +289,91 @@
         }
         
         .about-image {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
             border-radius: 1rem;
-            padding: 3rem;
-            color: var(--white);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Screenshots Section */
+        .screenshots {
+            background: var(--white);
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .screenshot-card {
+            background: var(--white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .screenshot-caption {
+            padding: 1.5rem;
             text-align: center;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+        }
+        
+        .screenshot-caption h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-green);
+        }
+        
+        .screenshot-caption p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Feature Images */
+        .feature-image {
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         /* Features Section */
@@ -661,6 +736,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -681,6 +757,9 @@
             <div class="cta-buttons">
                 <a href="#contact" class="btn-primary">Schedule a Demo</a>
                 <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-dream-plan-live.png" alt="Dream. Plan it. Live it. - Dreamlife Sim Dashboard" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
@@ -713,11 +792,7 @@
                     </ul>
                 </div>
                 <div class="about-image">
-                    <div>
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">💰</div>
-                        <h3 style="color: white; margin-bottom: 1rem;">Visualize Dreams</h3>
-                        <p style="opacity: 0.9;">See what's possible before planning</p>
-                    </div>
+                    <img src="images/lifestyle-simulation.png" alt="Lifestyle Simulation - Living the Dream in Santa Barbara" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%); border-radius: 1rem; padding: 3rem; color: white; text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;\'><div><div style=\'font-size: 4rem; margin-bottom: 1rem;\'>💰</div><h3 style=\'color: white; margin-bottom: 1rem;\'>Visualize Dreams</h3><p style=\'opacity: 0.9;\'>See what\'s possible before planning</p></div></div>'">
                 </div>
             </div>
         </div>
@@ -738,6 +813,9 @@
                         Interactive simulations with AI-generated lifestyle imagery help members see their dream lifestyle, 
                         career trajectory, and retirement goals come to life with personalized projections.
                     </p>
+                    <div class="feature-image">
+                        <img src="images/mobile-dream-dashboard.png" alt="Mobile Dream Dashboard - Dream it. Plan it. Live it." onerror="this.style.display='none'">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
@@ -746,6 +824,9 @@
                         Gamified learning experiences that complement your education programs, breaking down financial concepts 
                         into digestible, actionable weekly tasks that build knowledge and momentum.
                     </p>
+                    <div class="feature-image">
+                        <img src="images/app-menu.png" alt="App Menu - All Features and Navigation" onerror="this.style.display='none'">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
@@ -770,6 +851,9 @@
                         Investment strategy planning with portfolio projections and contribution analysis helps members 
                         visualize their retirement readiness and make informed decisions.
                     </p>
+                    <div class="feature-image">
+                        <img src="images/retirement-projection.png" alt="Retirement Projection - Portfolio Growth Visualization" onerror="this.style.display='none'">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">✅</div>
@@ -778,6 +862,46 @@
                         XP system, leveling, streaks, and progress tracking maintain long-term engagement. Members earn 
                         points, complete tasks, and celebrate milestones within your institution's support ecosystem.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section screenshots" id="screenshots">
+        <div class="section-container">
+            <h2 class="section-title">See Dreamlife Sim in Action</h2>
+            <p class="section-subtitle">
+                Real screenshots from the platform showing how members visualize and plan their dreamlife
+            </p>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="images/lifestyle-simulation.png" alt="Lifestyle Simulation - Santa Barbara Premium Lifestyle">
+                    <div class="screenshot-caption">
+                        <h4>Lifestyle Simulation</h4>
+                        <p>Members visualize their dream lifestyle with location-aware cost analysis</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/desktop-dream-dashboard.png" alt="Desktop Dashboard - Dream. Plan it. Live it.">
+                    <div class="screenshot-caption">
+                        <h4>Personalized Dashboard</h4>
+                        <p>Track progress, view projections, and take actionable steps</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/mobile-dream-dashboard.png" alt="Mobile Dashboard - Dream it. Plan it. Live it.">
+                    <div class="screenshot-caption">
+                        <h4>Mobile Experience</h4>
+                        <p>Full-featured mobile app for on-the-go financial planning</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/retirement-projection.png" alt="Retirement Projection - Portfolio Growth">
+                    <div class="screenshot-caption">
+                        <h4>Retirement Planning</h4>
+                        <p>Visualize retirement readiness with detailed projections and graphs</p>
+                    </div>
                 </div>
             </div>
         </div>
