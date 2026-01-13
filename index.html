@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dreamlife Sim - Extend your Credit Union's financial education programs with interactive simulations, gamified learning, and member engagement tools.">
+    <meta name="keywords" content="credit union, financial education, member engagement, financial wellness, B2B2C">
+    <title>Dreamlife Sim - Financial Education Platform for Credit Unions | Moneyling</title>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dreamlife Sim - Financial Education Platform for Credit Unions">
+    <meta property="og:description" content="Extend your institution's financial education programs with interactive simulations and gamified learning.">
+    <meta property="og:image" content="https://moneyling.com/assets/moneyling-logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        /* ============================================
+           CSS Styles - Embedded for Single File
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #456432;
+            --primary-green-light: #77A440;
+            --primary-green-hover: #3a5429;
+            --text-dark: #4A4A4A;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --shadow-sm: 0px 8px 20px rgba(69, 100, 50, 0.08);
+            --shadow-md: 0px 12px 30px rgba(69, 100, 50, 0.12);
+            --shadow-lg: 0px 20px 50px rgba(69, 100, 50, 0.15);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-green);
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+        
+        .nav-cta {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background: var(--primary-green-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+        
+        .hero-description {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--white);
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .about-features li {
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .about-features li::before {
+            content: "✓";
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+            color: var(--white);
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        /* Features Section */
+        .features {
+            background: var(--bg-light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: var(--white);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary-green);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .pricing-badge {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-period {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-cta:hover {
+            background: var(--primary-green-hover);
+            transform: translateY(-2px);
+        }
+        
+        .pricing-cta.featured {
+            background: var(--primary-green-light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            color: var(--white);
+        }
+        
+        .contact h2 {
+            color: var(--white);
+        }
+        
+        .contact-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--white);
+            color: var(--primary-green);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-success {
+            display: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .form-success.show {
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .footer-copyright {
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .hero {
+                padding: 6rem 1rem 4rem;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Dreamlife Sim</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <a href="#contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Extend Your Financial Institution's Education Programs</h1>
+            <p class="hero-subtitle">Help members ages 18-40 visualize and achieve their dreamlife</p>
+            <p class="hero-description">
+                Dreamlife Sim is a comprehensive financial education platform designed specifically for Credit Unions and Financial Institutions. 
+                Enhance your member wellness initiatives with interactive simulations, gamified learning, and seamless community integration.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">Schedule a Demo</a>
+                <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section-container">
+            <h2 class="section-title">About Dreamlife Sim</h2>
+            <p class="section-subtitle">
+                Developed by Moneyling, Dreamlife Sim extends your institution's financial education programs 
+                with interactive, visual learning experiences that engage members and drive results.
+            </p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transform Abstract Goals Into Tangible Plans</h3>
+                    <p>
+                        Dreamlife Sim helps your institution members <strong>see what's possible</strong> by transforming 
+                        abstract financial goals into tangible, visual simulations. Our platform seamlessly connects members 
+                        with your existing educational resources, financial advisors, and peer community support.
+                    </p>
+                    <p>
+                        As a B2B2C platform, Dreamlife integrates directly into your institution's member wellness programs, 
+                        complementing your existing financial literacy initiatives with cutting-edge technology and gamified engagement.
+                    </p>
+                    <ul class="about-features">
+                        <li>Designed specifically for Credit Unions and Financial Institutions</li>
+                        <li>Targets members ages 18-40 seeking financial wellness</li>
+                        <li>Extends existing education programs, doesn't replace them</li>
+                        <li>Seamless integration with institution resources and advisors</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div>
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">💰</div>
+                        <h3 style="color: white; margin-bottom: 1rem;">Visualize Dreams</h3>
+                        <p style="opacity: 0.9;">See what's possible before planning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="section-container">
+            <h2 class="section-title">Core Features</h2>
+            <p class="section-subtitle">
+                Three key experiences that drive member engagement and financial wellness
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Visual Dreamlife Visualization</h3>
+                    <p>
+                        Interactive simulations with AI-generated lifestyle imagery help members see their dream lifestyle, 
+                        career trajectory, and retirement goals come to life with personalized projections.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Weekly Micro Lessons & Tasks</h3>
+                    <p>
+                        Gamified learning experiences that complement your education programs, breaking down financial concepts 
+                        into digestible, actionable weekly tasks that build knowledge and momentum.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Institution Community Integration</h3>
+                    <p>
+                        Resource-rich environment that seamlessly connects members with your Credit Union's support community, 
+                        educational resources, financial advisors, and peer networks.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Career Pathway Explorer</h3>
+                    <p>
+                        AI-powered career analysis and income projections with detailed progression timelines help members 
+                        understand their earning potential and plan accordingly.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Retirement Calculator</h3>
+                    <p>
+                        Investment strategy planning with portfolio projections and contribution analysis helps members 
+                        visualize their retirement readiness and make informed decisions.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Gamification System</h3>
+                    <p>
+                        XP system, leveling, streaks, and progress tracking maintain long-term engagement. Members earn 
+                        points, complete tasks, and celebrate milestones within your institution's support ecosystem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="section-container">
+            <h2 class="section-title">Pricing Plans</h2>
+            <p class="section-subtitle">
+                Flexible pricing options designed for Financial Institutions of all sizes
+            </p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Starter</h3>
+                    <p class="pricing-description">Perfect for smaller institutions</p>
+                    <div class="pricing-price">Custom</div>
+                    <p class="pricing-period">Contact for pricing</p>
+                    <ul class="pricing-features">
+                        <li>Up to 1,000 members</li>
+                        <li>Core simulation features</li>
+                        <li>Basic gamification</li>
+                        <li>Email support</li>
+                        <li>Standard integration</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Sales</button>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3 class="pricing-title">Professional</h3>
+                    <p class="pricing-description">Ideal for mid-size institutions</p>
+                    <div class="pricing-price">Custom</div>
+                    <p class="pricing-period">Contact for pricing</p>
+                    <ul class="pricing-features">
+                        <li>Up to 10,000 members</li>
+                        <li>All simulation features</li>
+                        <li>Advanced gamification</li>
+                        <li>Priority support</li>
+                        <li>Custom integration</li>
+                        <li>Analytics dashboard</li>
+                    </ul>
+                    <button class="pricing-cta featured" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Sales</button>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Enterprise</h3>
+                    <p class="pricing-description">For large institutions</p>
+                    <div class="pricing-price">Custom</div>
+                    <p class="pricing-period">Contact for pricing</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited members</li>
+                        <li>All features included</li>
+                        <li>White-label options</li>
+                        <li>Dedicated support</li>
+                        <li>Custom development</li>
+                        <li>Advanced analytics</li>
+                        <li>SLA guarantee</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Get Started Today</h2>
+            <p class="section-subtitle contact-subtitle">
+                Schedule a demo or contact us to learn how Dreamlife Sim can enhance your institution's financial education programs
+            </p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@institution.com">
+                </div>
+                <div class="form-group">
+                    <label for="institution">Institution Name *</label>
+                    <input type="text" id="institution" name="institution" required placeholder="Your Credit Union or Financial Institution">
+                </div>
+                <div class="form-group">
+                    <label for="role">Your Role *</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select your role</option>
+                        <option value="executive">Executive/Leadership</option>
+                        <option value="member-services">Member Services</option>
+                        <option value="education">Education/Wellness</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="members">Approximate Member Count</label>
+                    <select id="members" name="members">
+                        <option value="">Select range</option>
+                        <option value="under-1k">Under 1,000</option>
+                        <option value="1k-10k">1,000 - 10,000</option>
+                        <option value="10k-50k">10,000 - 50,000</option>
+                        <option value="50k-100k">50,000 - 100,000</option>
+                        <option value="over-100k">Over 100,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your institution's needs and goals..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="form-success" id="formSuccess">
+                    <strong>Thank you!</strong> We've received your message and will contact you within 24 hours.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="https://moneyling.com" target="_blank" rel="noopener">Moneyling</a>
+            </div>
+            <p class="footer-copyright">
+                © 2025 Moneyling. All rights reserved. Dreamlife Sim is a product of Moneyling.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                institution: document.getElementById('institution').value,
+                role: document.getElementById('role').value,
+                members: document.getElementById('members').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Here you would typically send this to your backend/email service
+            // For now, we'll just show a success message
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            document.getElementById('formSuccess').classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('formSuccess').classList.remove('show');
+            }, 5000);
+            
+            // Optional: Send to email service (uncomment and configure)
+            /*
+            fetch('https://your-email-service-endpoint.com/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('formSuccess').classList.add('show');
+                this.reset();
+            })
+            .catch(error => {
+                alert('There was an error sending your message. Please try again.');
+            });
+            */
+        });
+
+        // Mobile menu toggle (simple implementation)
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
