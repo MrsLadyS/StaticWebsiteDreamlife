@@ -1158,38 +1158,29 @@
             const iframe = document.getElementById('walkthrough-video');
             const container = document.getElementById('video-container');
             
-            // Handle YouTube URLs
-            if (videoUrl.includes('youtube.com/watch') || videoUrl.includes('youtu.be/')) {
+            // Handle direct embed URLs (YouTube embed, Vimeo player, etc.)
+            if (videoUrl.includes('embed') || videoUrl.includes('player') || videoUrl.includes('youtube.com') || videoUrl.includes('vimeo.com')) {
+                iframe.src = videoUrl;
+                iframe.style.display = 'block';
+                if (container.querySelector('div')) {
+                    container.querySelector('div').style.display = 'none';
+                }
+            }
+            // Handle YouTube watch URLs
+            else if (videoUrl.includes('youtube.com/watch') || videoUrl.includes('youtu.be/')) {
                 const videoId = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1];
                 if (videoId) {
                     iframe.src = `https://www.youtube.com/embed/${videoId}`;
                     iframe.style.display = 'block';
-                    container.querySelector('div').style.display = 'none';
+                    if (container.querySelector('div')) {
+                        container.querySelector('div').style.display = 'none';
+                    }
                 }
-            }
-            // Handle Vimeo URLs
-            else if (videoUrl.includes('vimeo.com/')) {
-                const videoId = videoUrl.match(/vimeo\.com\/(\d+)/)?.[1];
-                if (videoId) {
-                    iframe.src = `https://player.vimeo.com/video/${videoId}`;
-                    iframe.style.display = 'block';
-                    container.querySelector('div').style.display = 'none';
-                }
-            }
-            // Handle direct embed URLs
-            else if (videoUrl.includes('embed') || videoUrl.includes('player')) {
-                iframe.src = videoUrl;
-                iframe.style.display = 'block';
-                container.querySelector('div').style.display = 'none';
             }
         }
 
-        // TODO: Replace with your actual video URL
-        // Examples:
-        // loadVideo('https://www.youtube.com/watch?v=YOUR_VIDEO_ID');
-        // loadVideo('https://vimeo.com/YOUR_VIDEO_ID');
-        // loadVideo('https://www.youtube.com/embed/YOUR_VIDEO_ID');
-        loadVideo(''); // Leave empty to show placeholder
+        // Load the 3-minute walkthrough video
+        loadVideo('https://www.youtube.com/embed/_Ls6aW0mR4g?si=scMY6cMQLFPi9NYY');
     </script>
 </body>
 </html>
