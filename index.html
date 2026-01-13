@@ -51,6 +51,16 @@
             font-size: 16px;
         }
         
+        /* Prevent scroll jump when video plays */
+        #video-container {
+            scroll-margin-top: 0;
+            scroll-snap-align: none;
+        }
+        
+        #video-container iframe {
+            pointer-events: auto;
+        }
+        
         body {
             font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--text-dark);
@@ -818,7 +828,8 @@
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; display: none; z-index: 2;" 
                     src="" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+                    allowfullscreen
+                    scrolling="no">
                 </iframe>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
@@ -1191,19 +1202,88 @@
         // Prevent scroll when video is clicked/played
         document.addEventListener('DOMContentLoaded', function() {
             const videoContainer = document.getElementById('video-container');
-            if (videoContainer) {
+            const iframe = document.getElementById('walkthrough-video');
+            
+            if (videoContainer && iframe) {
+                // Store original scroll behavior
+                const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+                
+                // Prevent scroll on container click
                 videoContainer.addEventListener('click', function(e) {
-                    // Store scroll position before any potential changes
                     const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    // Restore scroll position after a brief delay
+                    // Disable smooth scrolling temporarily
+                    document.documentElement.style.scrollBehavior = 'auto';
+                    document.body.style.scrollBehavior = 'auto';
+                    
+                    // Prevent default and stop propagation
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Restore scroll position immediately and repeatedly
+                    const restoreScroll = () => {
+                        window.scrollTo({
+                            top: scrollPos,
+                            left: 0,
+                            behavior: 'auto'
+                        });
+                    };
+                    
+                    // Restore multiple times to catch any delayed scrolls
+                    restoreScroll();
+                    setTimeout(restoreScroll, 10);
+                    setTimeout(restoreScroll, 50);
+                    setTimeout(restoreScroll, 100);
+                    setTimeout(restoreScroll, 200);
+                    setTimeout(restoreScroll, 500);
+                    
+                    // Restore scroll behavior after delays
+                    setTimeout(() => {
+                        document.documentElement.style.scrollBehavior = originalScrollBehavior;
+                        document.body.style.scrollBehavior = originalScrollBehavior;
+                    }, 1000);
+                }, true); // Use capture phase
+                
+                // Prevent iframe from causing scroll
+                iframe.addEventListener('load', function() {
+                    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Restore scroll position after iframe loads
                     setTimeout(() => {
                         window.scrollTo({
                             top: scrollPos,
-                            behavior: 'instant'
+                            left: 0,
+                            behavior: 'auto'
                         });
                     }, 100);
                 });
+                
+                // Monitor scroll and prevent unwanted jumps
+                let isScrolling = false;
+                window.addEventListener('scroll', function() {
+                    if (!isScrolling) {
+                        isScrolling = true;
+                        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+                        const containerRect = videoContainer.getBoundingClientRect();
+                        const containerTop = containerRect.top + scrollPos;
+                        
+                        // If scroll jumped significantly near video, restore position
+                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        if (Math.abs(currentScroll - scrollPos) > 50 && 
+                            currentScroll > containerTop - 100 && 
+                            currentScroll < containerTop + containerRect.height + 100) {
+                            window.scrollTo({
+                                top: scrollPos,
+                                left: 0,
+                                behavior: 'auto'
+                            });
+                        }
+                        
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 100);
+                    }
+                }, { passive: false });
             }
         });
 
