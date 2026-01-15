@@ -175,9 +175,26 @@ a:hover {
     width: auto;
 }
 
+.hero-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem auto;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: 12px;
+    margin: 2rem auto 0;
+}
+
  
 .feature-image {
     width: 100%;
+    max-width: 360px;
     height: auto;
     border-radius: 12px;
 }
@@ -187,10 +204,13 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    align-items: center;
+    justify-items: center;
 }
 
 .cta-image {
     width: 100%;
+    max-width: 720px;
     height: auto;
     border-radius: 12px;
     margin: 1.5rem 0;
@@ -206,7 +226,7 @@ a:hover {
 }
 
 .qr-image {
-    width: 160px;
+    width: 140px;
     height: auto;
     border-radius: 12px;
 }
