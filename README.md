@@ -1,11 +1,12 @@
-# Moneyling Marketing Site
+# Moneyling Dreamlife Marketing Site
 
-Static marketing website for Moneyling Dreamlife, designed to match the look, feel, and global settings from the Moneyling LMS site.
+Static marketing site for Moneyling Dreamlife Sim, designed for credit unions and financial institutions. The site uses funnel‑focused copy to drive demo requests and highlights member engagement outcomes.
 
 ## Structure
 
 ```
 marketing-site/
+├── assets/            # Marketing images
 ├── index.html          # Main landing page
 ├── css/
 │   └── styles.css     # Global styles matching LMS branding
@@ -16,19 +17,27 @@ marketing-site/
 
 ## Features
 
-- **Brand-Aligned Design**: Matches Moneyling LMS site branding
+- **Brand-Aligned Design**: Matches Moneyling brand visual system
   - Primary green color (#77a440)
   - Raleway and Open Sans typography
   - Consistent spacing and layout
 
 - **Responsive Layout**: Mobile-first design that works on all devices
 
-- **Navigation**: 
+- **Navigation**:
   - Home, About, Tools, Courses, Contact US, Login
   - Mobile hamburger menu
   - Smooth scrolling
 
-- **Footer**: 
+- **Funnel Copy**:
+  - Credit‑union positioning and outcomes
+  - Demo‑first CTA flow
+  - About + Dreamlife context with official links
+
+- **Images**:
+  - Hero, in‑app experience, workshop, and CTA sections
+
+- **Footer**:
   - Quick Links section
   - Contact information
   - Social media links (Facebook, Instagram, Pinterest, LinkedIn)
@@ -64,7 +73,7 @@ This static site can be deployed to:
 - Vercel
 - Any static hosting service
 
-Simply upload the `marketing-site` directory contents to your hosting provider.
+Simply upload the contents of this repository (or the `marketing-site` folder if using it as a subdirectory) to your hosting provider.
 
 ## Brand Colors
 
@@ -83,5 +92,7 @@ Simply upload the `marketing-site` directory contents to your hosting provider.
 
 - **LMS Courses**: https://lms.moneyling.org/courses/
 - **Dreamlife App**: https://dreamlife.moneyling.org
+- **Dreamlife App Overview**: https://moneyling.org/dreamlife-sim
+- **About Moneyling**: https://moneyling.org/about
 - **Contact Email**: info@moneyling.org
 - **Privacy Policy**: https://moneyling.org/privacy
