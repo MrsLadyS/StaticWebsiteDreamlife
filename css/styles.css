@@ -171,17 +171,44 @@ a:hover {
 }
 
 .logo-image {
-    height: 48px;
+    height: 64px;
     width: auto;
 }
 
-.nav-brand .logo-tagline {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--gray-medium);
-    font-family: var(--font-secondary);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+ 
+.feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.image-pair {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cta-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.qr-invite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.qr-image {
+    width: 160px;
+    height: auto;
+    border-radius: 12px;
 }
 
 .nav-menu {
