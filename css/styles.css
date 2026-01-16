@@ -183,6 +183,13 @@ a:hover {
     margin: 1.5rem auto;
 }
 
+.hero-logo {
+    width: 140px;
+    height: auto;
+    margin: 0.75rem auto 0.5rem;
+    display: block;
+}
+
 .section-image {
     width: 100%;
     max-width: 720px;
@@ -220,10 +227,9 @@ a:hover {
     max-width: 900px;
     margin: 1rem auto;
     text-align: left;
-    padding-left: 1.25rem;
+    padding-left: 0;
     line-height: 1.6;
-    list-style: disc;
-    list-style-position: outside;
+    list-style: none;
 }
 
 .content-list li {
@@ -241,6 +247,18 @@ a:hover {
 .content-list--light,
 .content-list--light li {
     color: var(--white);
+}
+
+.point-list {
+    max-width: 720px;
+    margin: 0.5rem auto 0;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.point-list p {
+    margin: 0 0 0.5rem;
+    color: inherit;
 }
 
 .qr-invite {
@@ -342,6 +360,14 @@ a:hover {
 .btn-primary:hover {
     background-color: var(--primary-green-dark);
     color: var(--white);
+}
+
+.btn-primary-dark {
+    background-color: var(--primary-green-dark);
+}
+
+.btn-primary-dark:hover {
+    background-color: #395127;
 }
 
 .btn-secondary {
