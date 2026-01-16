@@ -216,6 +216,33 @@ a:hover {
     margin: 1.5rem 0;
 }
 
+.content-list {
+    max-width: 900px;
+    margin: 1rem auto;
+    text-align: left;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+    list-style: disc;
+    list-style-position: outside;
+}
+
+.content-list li {
+    margin-bottom: 0.5rem;
+}
+
+.content-list--narrow {
+    max-width: 720px;
+}
+
+.content-list--compact {
+    margin-top: 0.75rem;
+}
+
+.content-list--light,
+.content-list--light li {
+    color: var(--white);
+}
+
 .qr-invite {
     display: flex;
     align-items: center;
@@ -223,6 +250,18 @@ a:hover {
     gap: 0.75rem;
     margin: 1.5rem 0;
     flex-wrap: wrap;
+    text-align: center;
+}
+
+.qr-invite p {
+    margin: 0;
+    max-width: 520px;
+}
+
+@media (max-width: 768px) {
+    .qr-invite {
+        flex-direction: column;
+    }
 }
 
 .qr-image {
@@ -320,6 +359,14 @@ a:hover {
 .btn-secondary:hover {
     background-color: var(--primary-green);
     color: var(--white);
+}
+
+.hero .btn-primary,
+.welcome-section .btn-secondary,
+.communities-section .btn-secondary,
+.cta-section .btn-primary {
+    display: inline-block;
+    margin: 1rem auto 0;
 }
 
 /* =======================
@@ -594,6 +641,11 @@ a:hover {
 
     .container {
         padding: 0 var(--spacing-md);
+    }
+
+    .content-list {
+        padding-left: 0.75rem;
+        list-style-position: outside;
     }
 }
 
