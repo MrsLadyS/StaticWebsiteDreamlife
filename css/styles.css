@@ -184,6 +184,7 @@ a:hover {
     height: auto;
     border-radius: 12px;
     margin: 1.5rem auto;
+    display: block;
 }
 
 .hero-actions {
@@ -191,6 +192,12 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
     margin-top: 1rem;
 }
 
@@ -257,7 +264,11 @@ a:hover {
     width: 100%;
     max-width: 360px;
     height: auto;
-    border-radius: 12px;
+    border-radius: 16px;
+    border: 2px solid var(--light-green-stroke);
+    background-color: var(--selected-light-green);
+    padding: 0.5rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .image-pair {
