@@ -463,6 +463,9 @@ a:hover {
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .feature-card:hover {
@@ -496,6 +499,15 @@ a:hover {
 .feature-card p {
     line-height: 1.7;
     color: var(--gray-dark);
+}
+
+.feature-card ul {
+    flex-grow: 1;
+}
+
+.feature-card .btn-secondary {
+    align-self: center;
+    margin-top: auto;
 }
 
 /* =======================
