@@ -612,6 +612,10 @@ a:hover {
     text-align: center;
 }
 
+.communities-section.section-muted {
+    background-color: #f4f4f4;
+}
+
 .communities-section p {
     max-width: 960px;
     margin: 0 auto;
