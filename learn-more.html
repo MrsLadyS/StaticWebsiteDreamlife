@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - Dreamlife</title>
+    <meta name="description" content="Learn more about Dreamlife and request details through our form.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/Full%20Logo%20with%20tagline.png" alt="Dreamlife" class="logo-image">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="learn-more.html" class="active">Learn More</a></li>
+                    <li><a href="index.html#contact">Contact US</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="welcome-section">
+            <div class="container">
+                <h1>Learn More About Dreamlife</h1>
+                <p class="welcome-text">
+                    Share a few details and our team will follow up with information on how Dreamlife supports ongoing member engagement.
+                </p>
+                <div class="section-callout">
+                    <h4>Request details</h4>
+                    <div id="hubspot-learn-more-form"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="learn-more.html">Learn More</a></li>
+                        <li><a href="index.html#contact">Contact US</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact US -->
+                <div class="footer-column">
+                    <h3>Contact US</h3>
+                    <ul>
+                        <li>
+                            <a href="mailto:info@moneyling.org">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                info@moneyling.org
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>Copyright © <span id="current-year"></span> Moneyling - All Rights Reserved.</p>
+                <p>Product of Moneyling LLC • <a href="https://moneyling.org" target="_blank" rel="noopener noreferrer">Moneyling.org</a> • 1-844-777-6773</p>
+                <p>Developed by Moneyling</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+        hbspt.forms.create({
+            portalId: "242304103",
+            formId: "bd2a728f-45cf-4151-b44c-42516a37cc0c",
+            region: "na2",
+            target: "#hubspot-learn-more-form"
+        });
+    </script>
+</body>
+</html>
