@@ -698,6 +698,10 @@ a:hover {
     background-color: #f4f4f4;
 }
 
+.communities-section.section-white {
+    background-color: var(--white);
+}
+
 .communities-section p {
     max-width: 960px;
     margin: 0 auto;
