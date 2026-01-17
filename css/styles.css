@@ -251,6 +251,10 @@ a:hover {
     font-weight: 700;
 }
 
+.section-callout .calendly-inline-widget {
+    margin-top: 0.75rem;
+}
+
 .section-callout + .welcome-text {
     margin-top: 1.25rem;
 }
