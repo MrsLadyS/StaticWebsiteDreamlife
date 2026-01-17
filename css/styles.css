@@ -294,7 +294,7 @@ a:hover {
 
 .founder-image {
     width: 100%;
-    max-width: 200px;
+    max-width: 160px;
     height: auto;
     border-radius: 50%;
     border: 2px solid var(--light-green-stroke);
@@ -315,6 +315,13 @@ a:hover {
 
 .founder-name a:hover {
     text-decoration: underline;
+}
+
+.founder-title {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    color: var(--selected-dark-green);
+    font-weight: 600;
 }
 
 .image-pair {
