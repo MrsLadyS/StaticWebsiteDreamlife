@@ -249,6 +249,7 @@ a:hover {
     margin-bottom: 0.5rem;
     color: var(--selected-dark-green);
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .section-callout .calendly-inline-widget {
