@@ -1,58 +1,98 @@
-# Dreamlife Sim Marketing Landing Page
+# Moneyling Dreamlife Marketing Site
 
-A standalone marketing funnel landing page for Dreamlife Sim, designed for Credit Unions and Financial Institutions.
+Static marketing site for Moneyling Dreamlife Sim, designed for credit unions and financial institutions. The site uses funnel‑focused copy to drive demo requests and highlights member engagement outcomes.
+
+## Structure
+
+```
+marketing-site/
+├── assets/            # Marketing images
+├── index.html          # Main landing page
+├── css/
+│   └── styles.css     # Global styles matching LMS branding
+├── js/
+│   └── main.js        # JavaScript for interactivity
+└── README.md          # This file
+```
 
 ## Features
 
-- **Single HTML File**: Everything embedded for easy deployment
-- **Responsive Design**: Mobile-first, works on all devices
-- **Marketing Funnel Sections**:
-  - Hero section with clear value proposition
-  - About section explaining the platform
-  - Features section highlighting core capabilities
-  - Pricing section with flexible plans
-  - Contact form for lead generation
-- **SEO Optimized**: Meta tags, semantic HTML
-- **Brand Consistent**: Uses Dreamlife Sim colors and fonts
+- **Brand-Aligned Design**: Matches Moneyling brand visual system
+  - Primary green color (#77a440)
+  - Raleway and Open Sans typography
+  - Consistent spacing and layout
 
-## Deployment to GitHub Pages
+- **Responsive Layout**: Mobile-first design that works on all devices
 
-1. This repository is already set up for GitHub Pages
-2. Go to repository Settings → Pages
-3. Select source branch (usually `main` or `master`)
-4. Your site will be live at: `https://mrsladys.github.io/StaticWebsiteDreamlife/`
+- **Navigation**:
+  - Home, About, Tools, Courses, Contact US, Login
+  - Mobile hamburger menu
+  - Smooth scrolling
 
-## Customization
+- **Funnel Copy**:
+  - Credit‑union positioning and outcomes
+  - Demo‑first CTA flow
+  - About + Dreamlife context with official links
 
-### Update Contact Form
-The contact form currently logs to console. To enable email sending:
+- **Images**:
+  - Hero, in‑app experience, workshop, and CTA sections
 
-1. Set up an email service (e.g., Formspree, EmailJS, or your own backend)
-2. Update the JavaScript in `index.html` (around line 800) with your endpoint
-3. Uncomment the fetch code and add your endpoint URL
+- **Footer**:
+  - Quick Links section
+  - Contact information
+  - Social media links (Facebook, Instagram, Pinterest, LinkedIn)
+  - Copyright with dynamic year
+  - "Developed by WorldWin Coder" attribution
 
-### Update Colors
-Colors are defined in the `:root` CSS variables at the top of the `<style>` section.
+## Local Development
 
-### Update Content
-All content is in the HTML - simply edit the text in each section.
+### Option 1: Simple HTTP Server
 
-## File Structure
+```bash
+# Using Python 3
+cd marketing-site
+python -m http.server 8000
 
+# Using Node.js (if you have http-server installed)
+npx http-server -p 8000
 ```
-StaticWebsiteDreamlife/
-├── index.html          # Complete landing page (single file)
-└── README.md           # This file
-```
 
-## Browser Support
+Then open http://localhost:8000 in your browser.
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### Option 2: VS Code Live Server
 
-## License
+1. Install the "Live Server" extension in VS Code
+2. Right-click on `index.html`
+3. Select "Open with Live Server"
 
-© 2025 Moneyling. All rights reserved.
+## Deployment
+
+This static site can be deployed to:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
+
+Simply upload the contents of this repository (or the `marketing-site` folder if using it as a subdirectory) to your hosting provider.
+
+## Brand Colors
+
+- **Primary Green**: #77a440
+- **Primary Green Dark**: #466431
+- **Gold**: #ccb269
+- **Title Blue**: #2c4b8e
+- **Warning/Orange**: #ea7d59
+
+## Typography
+
+- **Primary Font**: Raleway (Headings)
+- **Secondary Font**: Open Sans (Body text)
+
+## Links
+
+- **LMS Courses**: https://lms.moneyling.org/courses/
+- **Dreamlife App**: https://dreamlife.moneyling.org
+- **Dreamlife App Overview**: https://moneyling.org/dreamlife-sim
+- **About Moneyling**: https://moneyling.org/about
+- **Contact Email**: info@moneyling.org
+- **Privacy Policy**: https://moneyling.org/privacy

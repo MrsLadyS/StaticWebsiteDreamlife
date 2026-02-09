@@ -3,1292 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dreamlife Sim - Extend your Credit Union's financial education programs with interactive simulations, gamified learning, and member engagement tools.">
-    <meta name="keywords" content="credit union, financial education, member engagement, financial wellness, B2B2C">
-    <title>Dreamlife Sim - Financial Education Platform for Credit Unions | Moneyling</title>
-    
-    <!-- Open Graph / Social Media -->
+    <link rel="icon" type="image/png" href="assets/1.dreamlife-icon.png">
+    <title>Dreamlife-Sim, For leaders advancing community engagement and financial education</title>
+    <meta name="description" content="Dreamlife-Sim, For leaders advancing community engagement and financial education">
+    <meta property="og:title" content="Dreamlife-Sim, For leaders advancing community engagement and financial education">
+    <meta property="og:description" content="Dreamlife-Sim, For leaders advancing community engagement and financial education">
+    <meta property="og:image" content="https://mrsladys.github.io/StaticWebsiteDreamlife/assets/Four%20Dreamlife%20Users.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dreamlife Sim - Financial Education Platform for Credit Unions">
-    <meta property="og:description" content="Extend your institution's financial education programs with interactive simulations and gamified learning.">
-    <meta property="og:image" content="https://moneyling.com/assets/moneyling-logo.png">
+    <meta property="og:url" content="https://mrsladys.github.io/StaticWebsiteDreamlife/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dreamlife-Sim, For leaders advancing community engagement and financial education">
+    <meta name="twitter:description" content="Dreamlife-Sim, For leaders advancing community engagement and financial education">
+    <meta name="twitter:image" content="https://mrsladys.github.io/StaticWebsiteDreamlife/assets/Four%20Dreamlife%20Users.png">
     
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png">
-    
-    <style>
-        /* ============================================
-           CSS Styles - Embedded for Single File
-           ============================================ */
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-green: #456432;
-            --primary-green-light: #77A440;
-            --primary-green-hover: #3a5429;
-            --text-dark: #4A4A4A;
-            --text-light: #6B7280;
-            --bg-light: #F9FAFB;
-            --white: #FFFFFF;
-            --border-color: #E5E7EB;
-            --shadow-sm: 0px 8px 20px rgba(69, 100, 50, 0.08);
-            --shadow-md: 0px 12px 30px rgba(69, 100, 50, 0.12);
-            --shadow-lg: 0px 20px 50px rgba(69, 100, 50, 0.15);
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        
-        /* Prevent scroll jump when video plays */
-        #video-container {
-            scroll-margin-top: 0;
-            scroll-snap-align: none;
-        }
-        
-        #video-container iframe {
-            pointer-events: auto;
-        }
-        
-        body {
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--primary-green);
-        }
-        
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            box-shadow: var(--shadow-md);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Raleway', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-green);
-        }
-        
-        .nav-cta {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-cta:hover {
-            background: var(--primary-green-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary-green);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
-            color: var(--white);
-            padding: 8rem 2rem 6rem;
-            text-align: center;
-            margin-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            font-weight: 400;
-        }
-        
-        .hero-description {
-            font-size: 1.125rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            background: var(--white);
-            color: var(--primary-green);
-            padding: 1rem 2.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.125rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border: 2px solid var(--white);
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.125rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Section Styles */
-        .section {
-            padding: 5rem 2rem;
-        }
-        
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 4rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* About Section */
-        .about {
-            background: var(--white);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text p {
-            font-size: 1.125rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-        
-        .about-features {
-            list-style: none;
-            margin-top: 2rem;
-        }
-        
-        .about-features li {
-            padding: 0.75rem 0;
-            font-size: 1.125rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .about-features li::before {
-            content: "✓";
-            color: var(--primary-green);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        .about-image {
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Screenshots Section */
-        .screenshots {
-            background: var(--white);
-        }
-        
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .screenshot-card {
-            background: var(--white);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-        
-        .screenshot-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .screenshot-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .screenshot-caption {
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .screenshot-caption h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-green);
-        }
-        
-        .screenshot-caption p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        /* Hero Image */
-        .hero-image {
-            max-width: 800px;
-            margin: 3rem auto 0;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Feature Images */
-        .feature-image {
-            margin-top: 1.5rem;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .feature-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Features Section */
-        .features {
-            background: var(--bg-light);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .feature-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            background: var(--white);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .pricing-card {
-            background: var(--white);
-            border: 2px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-card.featured {
-            border-color: var(--primary-green);
-            box-shadow: var(--shadow-lg);
-            transform: scale(1.05);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-        
-        .pricing-badge {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-title {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-description {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-period {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-features li {
-            padding: 0.75rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .pricing-features li::before {
-            content: "✓";
-            color: var(--primary-green);
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-        
-        .pricing-cta {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary-green);
-            color: var(--white);
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 700;
-            font-size: 1.125rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-cta:hover {
-            background: var(--primary-green-hover);
-            transform: translateY(-2px);
-        }
-        
-        .pricing-cta.featured {
-            background: var(--primary-green-light);
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
-            color: var(--white);
-        }
-        
-        .contact h2 {
-            color: var(--white);
-        }
-        
-        .contact-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 3rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            font-size: 1rem;
-            font-family: inherit;
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--white);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--white);
-            color: var(--primary-green);
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 700;
-            font-size: 1.125rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .form-success {
-            display: none;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        .form-success.show {
-            display: block;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-        }
-        
-        .footer-copyright {
-            opacity: 0.8;
-            font-size: 0.875rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-            
-            .pricing-card.featured:hover {
-                transform: translateY(-5px);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            html {
-                font-size: 14px;
-            }
-            
-            .hero {
-                padding: 6rem 1rem 4rem;
-            }
-            
-            .section {
-                padding: 3rem 1rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-            }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Dreamlife Sim</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            <a href="https://calendly.com/savanha-moneyling/30min" target="_blank" rel="noopener" class="nav-cta">Schedule Demo</a>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/01A.png" alt="Dreamlife-Sim" class="logo-image">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="learn-more.html">Learn More</a></li>
+                    <li><a href="schedule-call.html">Schedule a Call</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="faq.html">FAQ's</a></li>
+                    <li><a href="contact.html">Contact US</a></li>
+                    <li><a href="https://dreamlife.moneyling.org" target="_blank" rel="noopener noreferrer">Try Dreamlife-Sim Now</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Extend Your Financial Institution's Education Programs</h1>
-            <p class="hero-subtitle">Help members ages 18-40 visualize and achieve their dreamlife</p>
-            <p class="hero-description">
-                Dreamlife Sim is a comprehensive financial education platform designed specifically for Credit Unions and Financial Institutions. 
-                Enhance your member wellness initiatives with interactive simulations, gamified learning, and seamless community integration.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://calendly.com/savanha-moneyling/30min" target="_blank" rel="noopener" class="btn-primary">Schedule a Demo</a>
-                <a href="https://dreamlife.moneyling.org" target="_blank" rel="noopener" class="btn-secondary">Try the App</a>
-            </div>
-            <div class="hero-image">
-                <img src="./images/hero-dream-plan-live.png" alt="Dream. Plan it. Live it. - Dreamlife Sim Dashboard" onerror="this.style.display='none'">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="section-container">
-            <h2 class="section-title">About Dreamlife Sim</h2>
-            <p class="section-subtitle">
-                Developed by Moneyling, Dreamlife Sim extends your institution's financial education programs 
-                with interactive, visual learning experiences that engage members and drive results.
-            </p>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Transform Abstract Goals Into Tangible Plans</h3>
-                    <p>
-                        Dreamlife Sim helps your institution members <strong>see what's possible</strong> by transforming 
-                        abstract financial goals into tangible, visual simulations. Our platform seamlessly connects members 
-                        with your existing educational resources, financial advisors, and peer community support.
-                    </p>
-                    <p>
-                        As a B2B2C platform, Dreamlife integrates directly into your institution's member wellness programs, 
-                        complementing your existing financial literacy initiatives with cutting-edge technology and gamified engagement.
-                    </p>
-                    <ul class="about-features">
-                        <li>Designed specifically for Credit Unions and Financial Institutions</li>
-                        <li>Targets members ages 18-40 seeking financial wellness</li>
-                        <li>Extends existing education programs, doesn't replace them</li>
-                        <li>Seamless integration with institution resources and advisors</li>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <p class="hero-subtitle" style="font-size:0.95rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">For financial institution leaders advancing community engagement and financial education</p>
+                <h1>Turn one-time financial education events into an ongoing digital member experience.</h1>
+                <p class="hero-subtitle">Dreamlife-Sim is a digital extension of institution-led financial education that helps members visualize the life they want, map realistic pathways, and take small steps over time. It keeps your financial institution connected between workshops and life milestones without adding staff or complexity.</p>
+                <p class="hero-subtitle" style="margin-top:0.75rem;">Financial institutions invest heavily in community-based financial education, but have no easy way to support members once the class, workshop, or event ends.</p>
+                <img src="assets/Four%20Dreamlife%20Users.png" alt="Dreamlife-Sim users holding the app with personalized results" loading="eager" decoding="async" class="hero-image">
+                <div class="hero-callout">
+                    <h3>Are you ready to...</h3>
+                    <ul class="content-list bullet-list bullet-list--light">
+                        <li>Extend the impact of Reality Fairs, homebuyer classes and workshops beyond the event</li>
+                        <li>Micro-lessons fit the adult</li>
+                        <li>Reach members who do not typically attend in-person programs</li>
+                        <li>Reinforce learning with micro-actions that keep momentum going</li>
+                        <li>Help members apply what they learn as they use your financial institution’s tools, products, and services</li>
+                        <li>Incorporates tailored micro-FinEd lessons as weekly tasks to fit adult members busy lives</li>
                     </ul>
                 </div>
-                <div class="about-image">
-                    <img src="./images/lifestyle-simulation.png" alt="Lifestyle Simulation - Living the Dream in Santa Barbara" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%); border-radius: 1rem; padding: 3rem; color: white; text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;\'><div><div style=\'font-size: 4rem; margin-bottom: 1rem;\'>💰</div><h3 style=\'color: white; margin-bottom: 1rem;\'>Visualize Dreams</h3><p style=\'opacity: 0.9;\'>See what\'s possible before planning</p></div></div>'">
+                <div class="hero-cta">
+                    <a href="learn-more.html" class="btn-primary btn-primary-dark">Learn More</a>
                 </div>
+                <p class="hero-subtitle" style="font-size:0.9rem; margin-top:1rem; text-align:center; max-width:720px; margin-left:auto; margin-right:auto;">
+                    Completed penetration compliance testing and actively working on SOC2 Certificate
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Video Walkthrough Section -->
-    <section class="section" style="background: var(--bg-light);">
-        <div class="section-container">
-            <h2 class="section-title">See Dreamlife Sim in 3 Minutes</h2>
-            <p class="section-subtitle">
-                Watch a quick walkthrough of how Dreamlife Sim helps members visualize and achieve their dreamlife
-            </p>
-            <div id="video-container" style="max-width: 800px; margin: 0 auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1rem; box-shadow: var(--shadow-lg); background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);">
-                <div id="video-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 2rem; z-index: 1;">
-                    <div>
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">▶️</div>
-                        <p style="font-size: 1.25rem; font-weight: 600;">3-Minute Walkthrough Video</p>
-                        <p style="opacity: 0.9; margin-top: 0.5rem;">Video coming soon</p>
-                    </div>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <h2>The Dreamlife-Sim Member Experience</h2>
+                <p class="welcome-text">
+                    Dreamlife-Sim is a visualization and pathway experience delivered through financial institution community partnerships. It helps members connect financial education to real life by seeing what they want, understanding realistic pathways, and taking small actions that add up over time.
+                </p>
+                <div class="section-callout">
+                    <h4>Before to After</h4>
+                    <p><strong>Before:</strong> Financial education happens in isolated moments with little continuity once members leave.</p>
+                    <p><strong>After:</strong> Members return to a clear vision of their goals, practical pathways, and simple actions over time, while the institution remains a trusted part of the journey.</p>
                 </div>
-                <iframe 
-                    id="walkthrough-video" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; display: none; z-index: 2;" 
-                    src="" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    scrolling="no">
-                </iframe>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://dreamlife.moneyling.org" target="_blank" rel="noopener" class="btn-primary" style="display: inline-block;">Try Dreamlife Sim Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section features" id="features">
-        <div class="section-container">
-            <h2 class="section-title">Core Features</h2>
-            <p class="section-subtitle">
-                Three key experiences that drive member engagement and financial wellness
-            </p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Visual Dreamlife Visualization</h3>
-                    <p>
-                        Interactive simulations with AI-generated lifestyle imagery help members see their dream lifestyle, 
-                        career trajectory, and retirement goals come to life with personalized projections.
-                    </p>
-                    <div class="feature-image">
-                        <img src="./images/mobile-dream-dashboard.png" alt="Mobile Dream Dashboard - Dream it. Plan it. Live it." onerror="this.style.display='none'">
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Weekly Micro Lessons & Tasks</h3>
-                    <p>
-                        Gamified learning experiences that complement your education programs, breaking down financial concepts 
-                        into digestible, actionable weekly tasks that build knowledge and momentum.
-                    </p>
-                    <div class="feature-image">
-                        <img src="./images/app-menu.png" alt="App Menu - All Features and Navigation" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Institution Community Integration</h3>
-                    <p>
-                        Resource-rich environment that seamlessly connects members with your Credit Union's support community, 
-                        educational resources, financial advisors, and peer networks.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h3>Career Pathway Explorer</h3>
-                    <p>
-                        AI-powered career analysis and income projections with detailed progression timelines help members 
-                        understand their earning potential and plan accordingly.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Retirement Calculator</h3>
-                    <p>
-                        Investment strategy planning with portfolio projections and contribution analysis helps members 
-                        visualize their retirement readiness and make informed decisions.
-                    </p>
-                    <div class="feature-image">
-                        <img src="./images/retirement-projection.png" alt="Retirement Projection - Portfolio Growth Visualization" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✅</div>
-                    <h3>Gamification System</h3>
-                    <p>
-                        XP system, leveling, streaks, and progress tracking maintain long-term engagement. Members earn 
-                        points, complete tasks, and celebrate milestones within your institution's support ecosystem.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshots Section -->
-    <section class="section screenshots" id="screenshots">
-        <div class="section-container">
-            <h2 class="section-title">See Dreamlife Sim in Action</h2>
-            <p class="section-subtitle">
-                Real screenshots from the platform showing how members visualize and plan their dreamlife
-            </p>
-            <div class="screenshots-grid">
-                <div class="screenshot-card">
-                    <img src="./images/lifestyle-simulation.png" alt="Lifestyle Simulation - Santa Barbara Premium Lifestyle" onerror="this.style.display='none'">
-                    <div class="screenshot-caption">
-                        <h4>Lifestyle Simulation</h4>
-                        <p>Members visualize their dream lifestyle with location-aware cost analysis</p>
-                    </div>
-                </div>
-                <div class="screenshot-card">
-                    <img src="./images/desktop-dream-dashboard.png" alt="Desktop Dashboard - Dream. Plan it. Live it." onerror="this.style.display='none'">
-                    <div class="screenshot-caption">
-                        <h4>Personalized Dashboard</h4>
-                        <p>Track progress, view projections, and take actionable steps</p>
-                    </div>
-                </div>
-                <div class="screenshot-card">
-                    <img src="./images/mobile-dream-dashboard.png" alt="Mobile Dashboard - Dream it. Plan it. Live it." onerror="this.style.display='none'">
-                    <div class="screenshot-caption">
-                        <h4>Mobile Experience</h4>
-                        <p>Full-featured mobile app for on-the-go financial planning</p>
-                    </div>
-                </div>
-                <div class="screenshot-card">
-                    <img src="./images/retirement-projection.png" alt="Retirement Projection - Portfolio Growth" onerror="this.style.display='none'">
-                    <div class="screenshot-caption">
-                        <h4>Retirement Planning</h4>
-                        <p>Visualize retirement readiness with detailed projections and graphs</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="section pricing" id="pricing">
-        <div class="section-container">
-            <h2 class="section-title">Pricing Plans</h2>
-            <p class="section-subtitle">
-                Flexible pricing options designed for Financial Institutions of all sizes
-            </p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Starter</h3>
-                    <p class="pricing-description">Perfect for smaller institutions</p>
-                    <div class="pricing-price">Custom</div>
-                    <p class="pricing-period">Contact for pricing</p>
-                    <ul class="pricing-features">
-                        <li>Up to 1,000 members</li>
-                        <li>Core simulation features</li>
-                        <li>Basic gamification</li>
-                        <li>Email support</li>
-                        <li>Standard integration</li>
+                <div class="section-callout">
+                    <h4>What’s included</h4>
+                    <ul class="content-list bullet-list">
+                        <li>Dreamlife-Sim visualization experience (lifestyle, career, retirement)</li>
+                        <li>Pathway mapping that connects today’s decisions to long-term life outcomes</li>
+                        <li>Micro-actions and micro financial moments that turn insight into progress</li>
+                        <li>Integration with financial institution education programs and resources</li>
+                        <li>Engagement insights showing how members interact with and return to the experience</li>
                     </ul>
-                    <a href="https://calendly.com/savanha-moneyling/30min" target="_blank" rel="noopener" class="pricing-cta" style="text-decoration: none; display: block;">Contact Sales</a>
                 </div>
-                <div class="pricing-card featured">
-                    <span class="pricing-badge">Most Popular</span>
-                    <h3 class="pricing-title">Professional</h3>
-                    <p class="pricing-description">Ideal for mid-size institutions</p>
-                    <div class="pricing-price">Custom</div>
-                    <p class="pricing-period">Contact for pricing</p>
-                    <ul class="pricing-features">
-                        <li>Up to 10,000 members</li>
-                        <li>All simulation features</li>
-                        <li>Advanced gamification</li>
-                        <li>Priority support</li>
-                        <li>Custom integration</li>
-                        <li>Analytics dashboard</li>
+                <p class="welcome-text">
+                    <strong>Format:</strong> An ongoing, self-guided digital app experience designed to be used before, during, and after community education moments and stay relevant as members’ lives change.
+                </p>
+                <div class="section-callout">
+                    <h4>Designed for</h4>
+                    <ul class="content-list bullet-list">
+                        <li>Financial institutions investing in community impact through financial education outreach</li>
+                        <li>Institutions serving members navigating careers, lifestyle tradeoffs, and real-world decisions</li>
+                        <li>Teams extending education beyond classes into everyday life</li>
                     </ul>
-                    <a href="https://calendly.com/savanha-moneyling/30min" target="_blank" rel="noopener" class="pricing-cta featured" style="text-decoration: none; display: block;">Contact Sales</a>
+                    <h4>Not for</h4>
+                    <ul class="content-list bullet-list">
+                        <li>Budgeting apps, expense trackers, or robo-advisors</li>
+                        <li>Sales-first marketplaces</li>
+                        <li>Tools promoting third-party products</li>
+                    </ul>
                 </div>
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Enterprise</h3>
-                    <p class="pricing-description">For large institutions</p>
-                    <div class="pricing-price">Custom</div>
-                    <p class="pricing-period">Contact for pricing</p>
-                    <ul class="pricing-features">
-                        <li>Unlimited members</li>
-                        <li>All features included</li>
-                        <li>White-label options</li>
-                        <li>Dedicated support</li>
-                        <li>Custom development</li>
-                        <li>Advanced analytics</li>
-                        <li>SLA guarantee</li>
-                    </ul>
-                    <a href="https://calendly.com/savanha-moneyling/30min" target="_blank" rel="noopener" class="pricing-cta" style="text-decoration: none; display: block;">Contact Sales</a>
+                <p class="welcome-text">
+                    If you're concerned about sustained engagement, you're right to be; it's a common complaint that adult learners often don't start or complete long financial education programs. Dreamlife-Sim replaces course fatigue with personalized weekly tasks that blend Small Actions, Micro-Learning, and SMART Goals, organically improving engagement by meeting members where they are and when they're ready. All without adding staff or new programs.
+                </p>
+                <a href="https://calendly.com/savanha-moneyling/30min" class="btn-secondary" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
+            </div>
+        </section>
+
+        <!-- What We Provide Section -->
+        <section id="about" class="features-section">
+            <div class="container">
+                <h2>Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Visualize Your Dreamlife-Sim</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Lifestyle</span>
+                            <span class="tag">Career</span>
+                            <span class="tag">Retirement</span>
+                        </p>
+                        <p>
+                            Dreamlife-Sim visualization experience that makes goals feel real and achievable.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Map Realistic Pathways</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Pathways</span>
+                            <span class="tag">Outcomes</span>
+                            <span class="tag">Guided</span>
+                        </p>
+                        <p>
+                            Pathway mapping that connects today’s decisions to long-term life outcomes.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Take Micro-Actions</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Micro-Lessons</span>
+                            <span class="tag">Tasks</span>
+                            <span class="tag">Momentum</span>
+                        </p>
+                        <p>
+                            Micro-actions and micro financial moments that turn insight into progress.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Integrates With Existing Programs</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Resources</span>
+                            <span class="tag">Partners</span>
+                        </p>
+                        <p>
+                            Your members should see your existing FinEd courses. We work with you to integrate your courses and programs into the micro-lessons and user tasks.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Personal Financial Education Curriculum (LMS)</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Six Core Financial Concepts</span>
+                            <span class="tag">Weekly Micro-Lessons</span>
+                            <span class="tag">Timely</span>
+                        </p>
+                        <p>
+                            Full curriculum covering Earnings, Savings, Investing, Risk, Credit Management, and Spending.
+                            Lessons are broken into weekly micro-lessons based on each user’s SMART goals and Dreamlife-Sim.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Engagement Insights</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Return Visits</span>
+                            <span class="tag">Signals</span>
+                            <span class="tag">Adoption</span>
+                        </p>
+                        <p>
+                            Engagement insights showing how members interact with and return to the experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-pair">
+                    <img src="assets/Nav%20Bar.png" alt="Dreamlife-Sim navigation preview" loading="lazy" decoding="async" class="feature-image">
+                    <img src="assets/Task.png" alt="Dreamlife-Sim weekly task view" loading="lazy" decoding="async" class="feature-image">
+                    <div class="video-cta-card">
+                        <a href="https://youtu.be/b35sc_rWUkc?si=uV0D2nIiJaiJVLYO" class="btn-secondary" target="_blank" rel="noopener noreferrer">Watch a 3min walk through demo</a>
+                        <p>Check out the behind the scene work, user impact, and behavior encouraged by the Dreamlife-Sim app.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="section-container">
-            <h2 class="section-title">Get Started Today</h2>
-            <p class="section-subtitle contact-subtitle">
-                Schedule a demo or contact us to learn how Dreamlife Sim can enhance your institution's financial education programs
-            </p>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+        <!-- Tools Section -->
+        <section id="tools" class="communities-section">
+            <div class="container">
+                <h2>Why Dreamlife-Sim Was Built</h2>
+                <div class="section-callout">
+                    <h4>Who we are</h4>
+                    <p>Hi, we're Jen and Savanha, the team behind Dreamlife-Sim.</p>
+                    <p>We help institutions extend financial education into ongoing, digital engagement for the community without adding staff or complexity. Our focus is simple: turning one-time workshops into sustained follow-through on real financial goals. No added staffing. No new programs to manage. No tech that creates more work than it solves.</p>
+                    <div class="founder-grid" aria-label="Dreamlife-Sim founders">
+                        <div class="founder-card">
+                            <img src="assets/Savanha%20Headshot.jpeg" alt="Savanha Brubaker headshot" loading="lazy" decoding="async" class="founder-image">
+                            <p class="founder-name"><a href="https://www.linkedin.com/in/savanha-brubaker/" target="_blank" rel="noopener noreferrer">Savanha Brubaker</a></p>
+                            <p class="founder-title">Co-Founder of Moneyling</p>
+                        </div>
+                        <div class="founder-card">
+                            <img src="assets/Jenn%20Headshot.jpeg" alt="Jenn Degenhardt headshot" loading="lazy" decoding="async" class="founder-image">
+                            <p class="founder-name"><a href="https://www.linkedin.com/in/-jenniferdegenhardt-/" target="_blank" rel="noopener noreferrer">Jenn Degenhardt</a></p>
+                            <p class="founder-title">Co-Founder of Moneyling</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="john@institution.com">
+                <div class="section-callout">
+                    <h4>Where we started</h4>
+                    <p>We did not start in financial institutions. We started where education is already expected to work: classrooms and community learning.</p>
+                    <p>Over the years, we have built and supported learning experiences across middle schools, high schools, universities, adult community education programs, nonprofits, and community organizations, including financial institutions that have partnered on education initiatives.</p>
+                    <p>That experience yielded a clear insight: adults want financial education, but they need it delivered differently than students do. Goal-based, contextual learning reduces overwhelm and makes the content feel relevant enough to act on.</p>
                 </div>
-                <div class="form-group">
-                    <label for="institution">Institution Name *</label>
-                    <input type="text" id="institution" name="institution" required placeholder="Your Credit Union or Financial Institution">
+                <div class="section-callout">
+                    <h4>The pattern we kept seeing</h4>
+                    <p>Adults consistently wanted financial education similar to what exists in high school LMS platforms, but they struggled to engage with large, generic course libraries.</p>
+                    <p>The cost was predictable. Institutions saw limited follow-through, and members lost momentum as soon as life got busy.</p>
                 </div>
-                <div class="form-group">
-                    <label for="role">Your Role *</label>
-                    <select id="role" name="role" required>
-                        <option value="">Select your role</option>
-                        <option value="executive">Executive/Leadership</option>
-                        <option value="member-services">Member Services</option>
-                        <option value="education">Education/Wellness</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="other">Other</option>
-                    </select>
+                <div class="section-callout">
+                    <h4>Why Dreamlife-Sim exists</h4>
+                    <p>Dreamlife-Sim was built to solve that gap.</p>
+                    <p>Adults do not need more content. They need relevant, goal-based education delivered in small, timely moments tied to their real lives.</p>
                 </div>
-                <div class="form-group">
-                    <label for="members">Approximate Member Count</label>
-                    <select id="members" name="members">
-                        <option value="">Select range</option>
-                        <option value="under-1k">Under 1,000</option>
-                        <option value="1k-10k">1,000 - 10,000</option>
-                        <option value="10k-50k">10,000 - 50,000</option>
-                        <option value="50k-100k">50,000 - 100,000</option>
-                        <option value="over-100k">Over 100,000</option>
-                    </select>
+                <div class="section-callout">
+                    <h4>How Dreamlife-Sim delivers</h4>
+                    <p>Dreamlife-Sim creates personalized weekly tasks across three categories: Small Actions, Micro-Learning, and SMART Goals, so education is delivered in micro-doses aligned to what someone is actively trying to accomplish.</p>
+                    <p>Instead of hoping a member finishes a course, Dreamlife-Sim supports the next practical step, organically improving engagement and follow-through over time.</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your institution's needs and goals..."></textarea>
+                <div class="section-callout">
+                    <h4>How We Work</h4>
+                    <p>Our engagement process is structured and low-lift for your team:</p>
+                    <ul class="content-list bullet-list">
+                        <li>Assess your existing education programs and member touchpoints</li>
+                        <li>Map the post-event member journey</li>
+                        <li>Design a Dreamlife-Sim extension that aligns with your current approach</li>
+                        <li>Launch with clear ownership and simple onboarding</li>
+                        <li>Provide a ready-to-use Dreamlife-Sim marketing package</li>
+                        <li>Refine through light reporting and iteration</li>
+                    </ul>
+                    <p>We handle the structure, setup, and continuity. Your team keeps doing what it already does best: delivering education and building trusted relationships.</p>
+                    <p>A typical rollout takes 4–8 weeks, depending on scope. Success does not require additional staffing; it requires a commitment to follow-through.</p>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <p style="margin-bottom: 1rem; opacity: 0.9;">Or schedule a demo directly:</p>
-                    <a href="https://calendly.com/savanha-moneyling/30min" target="_blank" rel="noopener" class="btn-primary" style="display: inline-block; background: rgba(255, 255, 255, 0.2); border: 2px solid var(--white);">Schedule on Calendly</a>
+                <div class="section-callout">
+                    <h4>What It's Like to Work With Us</h4>
+                    <p>Clients work with us because we are clear, practical, and focused on systems that actually get used. Our style is collaborative, structured, and direct. We prioritize adoption, simplicity, and clear ownership.</p>
+                    <p>We do not build overcomplicated solutions, chase vague outcomes, or deliver "set-it-and-forget-it" programs that fade after launch.</p>
                 </div>
-                <div class="form-success" id="formSuccess">
-                    <strong>Thank you!</strong> We've received your message and will contact you within 24 hours.
+                <div class="section-callout">
+                    <h4>Early Signals We're Watching</h4>
+                    <p>When adults are supported through goal-based engagement rather than content-heavy courses, we expect to see two meaningful shifts:</p>
+                    <ul class="content-list bullet-list">
+                        <li>Reduced overwhelm and increased sustained participation</li>
+                        <li>Continued engagement after workshops without increasing staff workload</li>
+                    </ul>
                 </div>
-            </form>
-        </div>
-    </section>
+                <div class="section-callout">
+                    <h4>Why This Matters</h4>
+                    <p>What happens after education is where real financial progress and compounding impact begins.</p>
+                    <p>We expect Dreamlife-Sim to increase ongoing communication between institutions and community members following workshops. We expect greater use of institutional tools, calculators, and expert support. Over time, we expect deeper relationships across major life moments—new accounts, loans, home purchases, career changes—supported by trusted experts accessible through the app's community and advisor connections.</p>
+                    <p>Dreamlife-Sim is not designed to replace existing education. It is designed to ensure that education actually leads somewhere.</p>
+                </div>
+                <a href="learn-more.html" class="btn-primary btn-primary-dark">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Empowering Communities Section -->
+        <section class="communities-section section-white">
+            <div class="container">
+                <h2>Financial Education That Compounds</h2>
+                <p class="welcome-text">Continuity is what turns education into outcomes.</p>
+                <div class="section-callout">
+                    <h4>The continuity gap</h4>
+                    <p>Financial education in financial institutions should not end when the event ends.</p>
+                    <p>It should continue in small, relevant moments that support real action toward the life members want to build. Because education does not fail in financial institutions. The classes are strong. The workshops are meaningful. Reality Fairs create real clarity. What breaks down is continuity after those moments, when members return to busy routines and the next step is no longer visible.</p>
+                    <p>That is the shift we are leading.</p>
+                    <p>We believe financial education should be personal, timely, and delivered in small, supportive doses that fit into real life. It works best when it is tailored to individual goals, extends beyond workshops into everyday decision-making, and supports institutions without adding staff burden. When done right, it wraps members in small, relevant communities that encourage progress toward their Dreamlife-Sim.</p>
+                </div>
+                <img src="assets/Retirement%20Projection%20during%20workshop.png" alt="Retirement projection results shown in a workshop setting" loading="lazy" decoding="async" class="section-image">
+                <div class="section-callout">
+                    <h4>The real challenge is not motivation</h4>
+                    <p>The challenge is not the quality of the education. It is the loss of continuity after strong educational moments.</p>
+                    <p>Members leave events inspired, then lose touch with their goals. Workshop goals are not revisited because there is no clear pathway back. Restarting feels inconvenient or unclear, so action gets postponed. When questions resurface, members default to what is most accessible, not what is most trusted.</p>
+                    <p>The intent remains. The continuity does not.</p>
+                    <p>And this is why the usual explanations miss the point. It is not that members are not motivated. It is not that staff does not care. It is not that digital tools cannot engage. Education happens in defined time windows, while goals unfold over months and years. Staff cannot manually follow up with every participant. Many tools require too much effort to re-engage once momentum fades.</p>
+                    <p>This is a design gap, not a commitment gap.</p>
+                </div>
+                <div class="section-callout">
+                    <h4>The cost of staying stuck</h4>
+                    <p>When education ends at the event, members do not lose interest, they lose continuity. As life resumes, progress slows. Next steps feel unclear when questions arise. Confidence erodes. The issue is not motivation.</p>
+                    <p>It is lost momentum and lost compounding.</p>
+                    <p>For institutions, the cost is not participation. It is under-compounded impact. Early adulthood is when members form long-term financial habits and make high-stakes decisions. When continuity is missing in that life stage, institutions lose relevance at the exact moment trust could deepen. Product awareness lags behind life-stage needs. Engagement shifts to external platforms simply because those platforms stay present.</p>
+                    <p>This is not churn. It is missed relationship compounding.</p>
+                    <p>And long-term, if continuity remains optional, education stays episodic instead of cumulative. Institutions work harder without proportional returns. Members reset instead of advance. The compounding power of education, trust, and outcomes is left unrealized. Education becomes something people attend, not something that builds momentum year over year.</p>
+                </div>
+                <div class="section-callout">
+                    <h4>Our manifesto</h4>
+                    <p>We believe members engage more deeply when education is tied to a life they can imagine.</p>
+                    <p>We believe financial education should evolve as members’ lives evolve. We believe the transition from youth education to adult decision-making is where continuity matters most. We believe institutions that stay present during early adulthood earn long-term trust.</p>
+                    <p>We believe simplicity is what makes education reusable. Members who understand their “why” stay connected and ask better questions. Digital tools should extend institutional relationships, not replace them. Trust grows through continuity, not volume. Sustainable systems reduce staff strain while increasing impact. Education should lead to action members can feel and measure.</p>
+                    <p>Imagine it. Plan it. Live it.</p>
+                    <p>When members can see the future they want, plan toward it, and revisit it over time, education compounds and institutions remain meaningfully connected. Dreamlife-Sim is designed to be the next chapter, not a separate book.</p>
+                </div>
+                <div class="section-callout">
+                    <h4>What this looks like in practice</h4>
+                    <p>The workshop becomes the on-ramp, not the endpoint. During the session, participants are prompted to use the Dreamlife-Sim app. They imagine how the topic applies to their own lives. They create one to two SMART goals tied to the workshop outcome. They join a small, topic-specific community with the host and peers. Learning transitions into guided action.</p>
+                    <p>After the event, continuity is supported through:</p>
+                    <ul class="content-list bullet-list">
+                        <li>Goal visibility tied to the life they imagined</li>
+                        <li>SMART goals broken into weekly tasks</li>
+                        <li>Small-group community engagement</li>
+                        <li>Open access to guidance and questions</li>
+                        <li>Clear pathways back to financial institution tools, products, and staff</li>
+                    </ul>
+                    <p>Small communities matter because they increase motivation through shared progress, lower the barrier to asking questions, build trust through familiarity, and expand reach organically. Community is about relevance, not scale.</p>
+                    <p>From a staff perspective, the operating rhythm stays realistic. Workshops continue monthly or quarterly. Goal creation and task breakdown are automated. Communities remain open without constant moderation. Staff engage when needed and gain insight into emerging topics. Ongoing engagement exists without requiring staff to manually manage each interaction.</p>
+                    <p>Success looks like weekly task completion and sharing, active community discussion, member-initiated outreach to the financial institutions, increased use of relevant tools and services, and members celebrating completed SMART goals.</p>
+                    <p>We measure what supports compounding behavior: task completion, community participation, member outreach, goal completion tied to workshops, and repeat engagement. We do not over-weight one-time attendance, passive logins, clicks without context, or short-term spikes.</p>
+                </div>
+                <div class="section-callout">
+                    <h4>Who this movement is for</h4>
+                    <p>This is for financial institutions with leaders responsible for financial education, community engagement, and member experience and trust.</p>
+                    <p>It is for leaders who are already investing in workshops and Reality Fairs, who see education as a journey, not a moment, who want measurable follow-through, and who want to extend impact without adding staff.</p>
+                    <p>It is not for one-off event seekers, checkbox education programs, or organizations focused only on attendance or impressions.</p>
+                    <p>Readiness looks like investing in Reality Fairs and youth or adult financial education, having dedicated education leadership, and seeking to extend member engagement into the 18–40 life stage.</p>
+                </div>
+                <div class="section-callout">
+                    <h4>Invitation</h4>
+                    <p>If you want to extend your existing education programs into ongoing engagement and follow-through, we should talk.</p>
+                    <p>The next step is to explore a licensing partnership with Moneyling to extend your current programs through Dreamlife-Sim. The lowest-friction action is a short discovery call.</p>
+                    <p>If your first thought is, “This sounds like more work,” that is exactly what we designed against. Dreamlife-Sim is built to extend education and engagement without increasing staff burden.</p>
+                    <p>In a short call, you will gain clear insight into how Dreamlife-Sim can extend your reach, increase use of existing tools, and support members as they imagine, plan, and live their financial goals.</p>
+                </div>
+                <a href="https://calendly.com/savanha-moneyling/30min" class="btn-secondary" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
+            </div>
+        </section>
+
+        <!-- Partner Packages -->
+        <section id="packages" class="features-section section-muted">
+            <div class="container">
+                <h2>Partner Packages</h2>
+                <p class="welcome-text">
+                    Choose the right partnership level based on your goals and community impact strategy.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Support Your Members</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Premium Sponsorships</span>
+                            <span class="tag">Community Support</span>
+                            <span class="tag">Insights</span>
+                        </p>
+                        <p>Sponsor your members’ premium account memberships.</p>
+                        <ul class="content-list content-list--compact bullet-list">
+                            <li>(4) Sponsor of the Week advertisements per year</li>
+                            <li>(3) Community Groups for your members</li>
+                            <li>Quarterly insights</li>
+                        </ul>
+                        <a href="https://calendly.com/savanha-moneyling/30min" class="btn-secondary" target="_blank" rel="noopener noreferrer">Schedule a Meeting</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Community Expert Package</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Expanded Visibility</span>
+                            <span class="tag">Exclusive Placement</span>
+                            <span class="tag">Integration</span>
+                        </p>
+                        <p>Elevate your presence and deepen member engagement.</p>
+                        <ul class="content-list content-list--compact bullet-list">
+                            <li>(8) Sponsor of the Week advertisements per year</li>
+                            <li>No competitors ads on your members’ pages</li>
+                            <li>Integration of tasks to institution’s website</li>
+                            <li>Quarterly insights meetings</li>
+                        </ul>
+                        <a href="https://calendly.com/savanha-moneyling/30min" class="btn-secondary" target="_blank" rel="noopener noreferrer">Schedule a Meeting</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Unstoppable Package</h3>
+                        <p class="feature-tags">
+                            <span class="tag">Full LMS Access</span>
+                            <span class="tag">Institutional Courses</span>
+                            <span class="tag">Dreamlife-Sim Features</span>
+                        </p>
+                        <p><strong>Determined to close the wealth gap in your community!</strong></p>
+                        <ul class="content-list content-list--compact bullet-list">
+                            <li>Access to Moneyling Learning Management System</li>
+                            <li>Access to the 320 lessons on the LMS</li>
+                            <li>Implement up to 20 courses per year of institutional financial education</li>
+                            <li>Includes all Community Expert Package features</li>
+                        </ul>
+                        <a href="https://calendly.com/savanha-moneyling/30min" class="btn-secondary" target="_blank" rel="noopener noreferrer">Schedule a Meeting</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Started Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <h2>Ready to Launch Your Dreamlife-Sim Program?</h2>
+                <p>
+                    Book a walkthrough to see how Dreamlife-Sim fits into your current financial education strategy. We’ll help you activate a member experience that drives engagement, learning, and advisor connection.
+                </p>
+                <img src="assets/End%20of%20a%20Workshop%20connection.png" alt="Workshop conclusion showing Dreamlife-Sim connection and QR code" loading="lazy" decoding="async" class="cta-image">
+                <div class="qr-invite">
+                    <img src="assets/QR%20Code%20Demo.png" alt="Dreamlife-Sim app demo QR code" loading="lazy" decoding="async" class="qr-image">
+                    <img src="assets/1.dreamlife-icon.png" alt="Dreamlife-Sim logo" loading="lazy" decoding="async" class="qr-logo">
+                    <p>Scan the QR code to try a demo of the Dreamlife-Sim App experience.</p>
+                </div>
+                <a href="https://calendly.com/savanha-moneyling/30min" class="btn-primary btn-primary-dark" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#screenshots">Screenshots</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-                <a href="https://dreamlife.moneyling.org" target="_blank" rel="noopener">Try the App</a>
-                <a href="https://moneyling.com" target="_blank" rel="noopener">Moneyling</a>
+    <footer id="contact" class="footer">
+        <div class="container">
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>Copyright © <span id="current-year"></span> Moneyling - All Rights Reserved.</p>
+                <p><a href="terms.html">Terms of Service</a> • <a href="privacy.html">Privacy Policy</a></p>
+                <p>Product of Moneyling LLC • <a href="https://moneyling.org" target="_blank" rel="noopener noreferrer">Moneyling.org</a> • 1-844-777-6773 • <a href="mailto:info@moneyling.org">info@moneyling.org</a></p>
+                <p>Developed by Moneyling</p>
             </div>
-            <p class="footer-copyright">
-                © 2025 Moneyling. All rights reserved. Dreamlife Sim is a product of Moneyling.
-            </p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                institution: document.getElementById('institution').value,
-                role: document.getElementById('role').value,
-                members: document.getElementById('members').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Here you would typically send this to your backend/email service
-            // For now, we'll just show a success message
-            console.log('Form submitted:', formData);
-            
-            // Show success message
-            document.getElementById('formSuccess').classList.add('show');
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('formSuccess').classList.remove('show');
-            }, 5000);
-            
-            // Optional: Send to email service (uncomment and configure)
-            /*
-            fetch('https://your-email-service-endpoint.com/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('formSuccess').classList.add('show');
-                this.reset();
-            })
-            .catch(error => {
-                alert('There was an error sending your message. Please try again.');
-            });
-            */
-        });
-
-        // Mobile menu toggle (simple implementation)
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // Video embed handler - Update this function with your video URL
-        function loadVideo(videoUrl) {
-            if (!videoUrl || videoUrl === '') return;
-            
-            const iframe = document.getElementById('walkthrough-video');
-            const placeholder = document.getElementById('video-placeholder');
-            const container = document.getElementById('video-container');
-            
-            // Store current scroll position
-            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Handle direct embed URLs (YouTube embed, Vimeo player, etc.)
-            if (videoUrl.includes('embed') || videoUrl.includes('player') || videoUrl.includes('youtube.com') || videoUrl.includes('vimeo.com')) {
-                iframe.src = videoUrl;
-                iframe.style.display = 'block';
-                if (placeholder) {
-                    placeholder.style.display = 'none';
-                }
-            }
-            // Handle YouTube watch URLs
-            else if (videoUrl.includes('youtube.com/watch') || videoUrl.includes('youtu.be/')) {
-                const videoId = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1];
-                if (videoId) {
-                    iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                    iframe.style.display = 'block';
-                    if (placeholder) {
-                        placeholder.style.display = 'none';
-                    }
-                }
-            }
-            
-            // Prevent scroll jump by maintaining scroll position
-            requestAnimationFrame(() => {
-                window.scrollTo(0, scrollPosition);
-            });
-        }
-        
-        // Prevent scroll when video is clicked/played
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoContainer = document.getElementById('video-container');
-            const iframe = document.getElementById('walkthrough-video');
-            
-            if (videoContainer && iframe) {
-                // Store original scroll behavior
-                const originalScrollBehavior = document.documentElement.style.scrollBehavior;
-                
-                // Prevent scroll on container click
-                videoContainer.addEventListener('click', function(e) {
-                    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Disable smooth scrolling temporarily
-                    document.documentElement.style.scrollBehavior = 'auto';
-                    document.body.style.scrollBehavior = 'auto';
-                    
-                    // Prevent default and stop propagation
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Restore scroll position immediately and repeatedly
-                    const restoreScroll = () => {
-                        window.scrollTo({
-                            top: scrollPos,
-                            left: 0,
-                            behavior: 'auto'
-                        });
-                    };
-                    
-                    // Restore multiple times to catch any delayed scrolls
-                    restoreScroll();
-                    setTimeout(restoreScroll, 10);
-                    setTimeout(restoreScroll, 50);
-                    setTimeout(restoreScroll, 100);
-                    setTimeout(restoreScroll, 200);
-                    setTimeout(restoreScroll, 500);
-                    
-                    // Restore scroll behavior after delays
-                    setTimeout(() => {
-                        document.documentElement.style.scrollBehavior = originalScrollBehavior;
-                        document.body.style.scrollBehavior = originalScrollBehavior;
-                    }, 1000);
-                }, true); // Use capture phase
-                
-                // Prevent iframe from causing scroll
-                iframe.addEventListener('load', function() {
-                    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Restore scroll position after iframe loads
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: scrollPos,
-                            left: 0,
-                            behavior: 'auto'
-                        });
-                    }, 100);
-                });
-                
-                // Monitor scroll and prevent unwanted jumps
-                let isScrolling = false;
-                window.addEventListener('scroll', function() {
-                    if (!isScrolling) {
-                        isScrolling = true;
-                        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-                        const containerRect = videoContainer.getBoundingClientRect();
-                        const containerTop = containerRect.top + scrollPos;
-                        
-                        // If scroll jumped significantly near video, restore position
-                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                        if (Math.abs(currentScroll - scrollPos) > 50 && 
-                            currentScroll > containerTop - 100 && 
-                            currentScroll < containerTop + containerRect.height + 100) {
-                            window.scrollTo({
-                                top: scrollPos,
-                                left: 0,
-                                behavior: 'auto'
-                            });
-                        }
-                        
-                        setTimeout(() => {
-                            isScrolling = false;
-                        }, 100);
-                    }
-                }, { passive: false });
-            }
-        });
-
-        // Load the 3-minute walkthrough video
-        loadVideo('https://www.youtube.com/embed/_Ls6aW0mR4g?si=scMY6cMQLFPi9NYY');
-    </script>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
