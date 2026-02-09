@@ -698,6 +698,50 @@ a:hover {
 }
 
 /* =======================
+   Home Blurbs (Explore further)
+   ======================= */
+.home-blurbs .blurb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.blurb-card {
+    background-color: var(--selected-light-green);
+    border: 2px solid var(--light-green-stroke);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.blurb-card h3 {
+    color: var(--selected-dark-green);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.25rem;
+}
+
+.blurb-card p {
+    flex-grow: 1;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-dark);
+}
+
+.blurb-link {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blurb-link:hover {
+    text-decoration: underline;
+    color: var(--primary-green-dark);
+}
+
+/* =======================
    Communities Section
    ======================= */
 .communities-section {
