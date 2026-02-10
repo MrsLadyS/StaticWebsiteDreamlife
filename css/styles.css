@@ -627,9 +627,26 @@ a:hover {
     background-color: var(--white);
 }
 
+.features-section h1,
 .features-section h2 {
     text-align: center;
     margin-bottom: var(--spacing-xl);
+}
+
+.features-subhead {
+    font-size: 1.25rem;
+    color: var(--selected-dark-green);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.features-subhead:first-of-type {
+    margin-top: 0;
+}
+
+.features-cta {
+    text-align: center;
+    margin-top: var(--spacing-lg);
 }
 
 .features-section .welcome-text {
@@ -697,6 +714,27 @@ a:hover {
     margin-top: auto;
 }
 
+.packages-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: var(--spacing-lg);
+}
+
+.package-est-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--selected-dark-green);
+    margin-top: var(--spacing-md);
+    margin-bottom: 0.25rem;
+}
+
+.package-discount {
+    font-size: 0.85rem;
+    color: var(--gray-medium);
+    margin-bottom: var(--spacing-sm);
+}
+
 /* =======================
    Home Blurbs (Explore further)
    ======================= */
@@ -739,6 +777,86 @@ a:hover {
 .blurb-link:hover {
     text-decoration: underline;
     color: var(--primary-green-dark);
+}
+
+/* =======================
+   Validation panels (About page – under Early Signals)
+   ======================= */
+.validation-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.validation-panel {
+    background: var(--selected-light-green);
+    border: 2px solid var(--light-green-stroke);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.validation-panel-title {
+    color: var(--title-blue);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.validation-quote {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin: 0 0 var(--spacing-sm);
+    font-style: italic;
+    position: relative;
+    line-height: 1.6;
+}
+
+.validation-quote::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 24px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: var(--white) transparent transparent;
+}
+
+.validation-source {
+    font-size: 0.875rem;
+    color: var(--gray-medium);
+    margin-bottom: 0.5rem;
+}
+
+.validation-benefit {
+    color: var(--title-blue);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Past partners logo strip (About page) */
+.partner-logos-callout .partner-logos-figure {
+    margin: var(--spacing-lg) 0 0;
+    text-align: center;
+}
+
+.partner-logos-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.partner-logos-figure figcaption {
+    font-size: 0.9rem;
+    color: var(--gray-medium);
+    margin-top: var(--spacing-sm);
 }
 
 /* =======================
